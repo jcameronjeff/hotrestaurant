@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hot Restaurant - Express</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css">
+  
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
+  <style type="text/css">
+    .jumbotron{
+      margin-top: 5%;
+    }
+     .btn.btn-lg{
+        padding: 2rem 4rem;
+        font-size: 1.5rem;
+  }
+  body{
+    background-image: url("https://images.pexels.com/photos/5317/food-salad-restaurant-person.jpg?w=940&h=650&auto=compress&cs=tinysrgb");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  </style>
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="jumbotron">
+			<h1 class="text-center animated bounceInDown"><span class="glyphicon glyphicon-fire"></span> Hot Restaurant</h1>
+			<hr>
+			<h2 class="text-center">We only have 5 tables! Book your seat before they all are gone!</h2>
+			<br>
+
+			<div class="text-center">
+				<a href="/tables"><button type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list-alt"></span> View Tables</button></a>
+				<a href="/reserve"><button type="button" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-credit-card"></span> Make Reservation</button></a>
+			</div>
+
+		</div>
+
+    <footer class="footer">
+      <div class="container">
+       <a href="/api/tables"><button type="button" class="btn btn-md btn-primary">API Table Link</button></a> 
+       <a href="/api/waitlist"><button type="button" class="btn btn-md btn-primary">API Waitlist</button></a>  
+      </div>
+    </footer>
+
+	</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hot Restaurant - Reserve</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css">
+  
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
+  <style type="text/css">
+  
+     .btn.btn-lg{
+        padding: 2rem 4rem;
+        font-size: 1.5rem;
+  }
+
+  .jumbotron{
+      margin-top: 5%;
+    }
+
+    form{
+        padding: 0% 10%;
+    }
+
+    .parallax {
+    /* The image used */
+    background-image: url("https://images.pexels.com/photos/5317/food-salad-restaurant-person.jpg?w=940&h=650&auto=compress&cs=tinysrgb");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+  
+  </style>
+</head>
+<body>
+    <div class="parallax">
+
+    <div class="container">
+        <div class="jumbotron">
+			<h1 class="text-center animated bounceInDown"><span class="glyphicon glyphicon-fire"></span> Hot Restaurant</h1>
+			<hr>
+			<h2 class="text-center">Make your reservation</h2>
+			<br>
+
+			<div class="text-center">
+				<a href="/tables"><button type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list-alt"></span> View Tables</button></a>
+				<a href="/"><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home"></span></button></a>
+			</div>
+		</div>
+    <div class="row">
+
+      <div class="col-lg-12">
+        <div class="card">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Table Reservation</strong></h3>
+          </div>
+          <div class="panel-body">
+            <form method="POST" role="form">
+
+              <div class="form-group">
+                <label for="customerName">Name</label>
+                <input type="text" class="form-control" id="customerName">
+              </div>
+
+              <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="text" class="form-control" id="phoneNumber">
+              </div>
+
+              <div class="form-group">
+                <label for="customerEmail">Email</label>
+                <input type="text" class="form-control" id="customerEmail">
+              </div>
+
+              <div class="form-group">
+                <label for="customerID">Unique Id</label>
+                <input type="text" class="form-control" id="customerID">
+              </div>
+
+            </form>
+            <br>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary btn-lg" id="add-btn"><span class="glyphicon glyphicon-fire"></span> Submit</button>
+            </div>
+          </div>
+        
+
+      </div>
+    </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+        <a href="/api/tables"><button type="button" class="btn btn-md btn-primary">API Table Link</button></a> 
+        <a href="/api/waitlist"><button type="button" class="btn btn-md btn-primary">API Waitlist</button></a> 
+    </div>
+  </footer>
+</div>
+  <script type="text/javascript">
+   
+     $("#add-btn").on("click", function(event) {
+      event.preventDefault();
+      var newReservation = {
+        customerName: $("#customerName").val().trim(),
+        phoneNumber: $("#phoneNumber").val().trim(),
+        customerEmail: $("#customerEmail").val().trim(),
+        customerID: $("#customerID").val().trim()
+      };
+        console.log(newReservation);
+
+       var currentURL = window.location.origin;
+
+
+      $.post(currentURL + "/api/tables", newReservation, function(data) {
+        console.log(data);
+        
+        if(data.confirmed === true){
+                alert("Your reservation is confirmed!")
+                console.log("yes");
+	    	}
+
+        else{
+            alert("You have been added to the wait list")
+            console.log("no");
+        }
+        $('#customerName').val("");
+			$('#phoneNumber').val("");
+			$('#customerEmail').val("");
+			$('#customerID').val("");
+      });
+      return false;
+    });
+  </script>
+
+</body>
+</html>
