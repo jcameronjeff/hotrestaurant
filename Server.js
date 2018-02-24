@@ -17,15 +17,15 @@ var tables = [],
     waitlist = [];
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, './index.html'));
 });
 
 app.get('/tables', (req, res) => {
-    res.sendFile(path.join(__dirname, 'tables.html'));
+    res.sendFile(path.join(__dirname, './tables.html'));
 });
 
 app.get('/reserve', (req, res) => {
-    res.sendFile(path.join(__dirname, 'reserve.html'));
+    res.sendFile(path.join(__dirname, './reserve.html'));
 });
 
 app.get('/api/tables', (req, res) => res.json(tables));
