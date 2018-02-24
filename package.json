@@ -11,6 +11,28 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "mysql": "^2.15.0"
+  },
+  "development": {
+    "username": "y5g3u9vettymi6zx",
+    "password": "t0s61lmgm5cbqbv4",
+    "database": "n18mdd2agt5q1vl3",
+    "host": "wp433upk59nnhpoh.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "y5g3u9vettymi6zx",
+    "password": "t0s61lmgm5cbqbv4",
+    "database": "n18mdd2agt5q1vl3",
+    "host": "wp433upk59nnhpoh.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "y5g3u9vettymi6zx",
+    "password": "t0s61lmgm5cbqbv4",
+    "database": "n18mdd2agt5q1vl3",
+    "host": "wp433upk59nnhpoh.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql"
   }
 }

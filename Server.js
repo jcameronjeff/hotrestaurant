@@ -5,6 +5,21 @@ const express = require('express'),
 const app = express(),
     PORT = process.env.PORT || 1313;
 
+    var mysql = require("mysql");
+
+
+    var connection = mysql.createConnection({
+        host: "wp433upk59nnhpoh.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+        port: 3306,
+        user: 'y5g3u9vettymi6zx',
+        password: 't0s61lmgm5cbqbv4',
+        database: 'n18mdd2agt5q1vl3'
+    });
+    
+
+
+
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
